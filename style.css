@@ -93,3 +93,15 @@ button:hover {
   background-color: #00cccc;
 }
 
+a {
+  color: #00ffff; /* bright aqua to match your h2 borders */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
