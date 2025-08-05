@@ -10,26 +10,136 @@
 
   <!-- External CSS -->
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Scroll animation CSS (you can put this in your style.css too) -->
+  <style>
+    .project-section {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 40px 0;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .project-section:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .project-img {
+      width: 300px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .project-text {
+      max-width: 500px;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .project-section:hover {
+      transform: scale(1.02);
+      transition: transform 0.3s ease;
+    }
+  </style>
 </head>
 <body>
-      <nav>
+  <!-- Navigation -->
+  <nav>
     <a href="index.html">Home</a> |
     <a href="projects.html">Projects</a> |
     <a href="aboutme.html">About Me</a> |
     <a href="contact.html">Contact</a>
   </nav>
+
+  <!-- Page Header -->
   <div class="container">
     <h1>My Projects</h1>
     <p>Here's a list of some projects I'm proud of:</p>
-    <ul>
-      <li>A mobile timer app made with Flutter</li>
-      <li>A low poly game map designed in Blender</li>
-      <li>A Python script that organizes my school files</li>
-    </ul>
+
+  <!-- Project Sections -->
+    <!-- Project 1 -->
+    <div class="project-section">
+      <img src="images/KeyChain.png" alt="Custom Keychain" class="project-img" />
+      <div class="project-text">
+        <h2>Keychain</h2>
+        <p>For a class project, I designed a custom keychain in Blender with my name on it. I started by modeling a flat base using a scaled cube, then added my name using the Text tool. After converting the text to a mesh, I combined it with the base using the Boolean modifier and added a small cylinder to create the keyring hole.
+I used Extrude to give it thickness and adjusted everything with Move and Scale to get the layout just right. One of the trickiest parts was making sure the text wasn’t floating or cutting through the tag weirdly — it took some precision.
+This project helped me get more comfortable working with multiple objects and combining shapes cleanly. I can see these skills being useful for 3D printing, product design, or making custom gifts. Next, I want to try modeling a key or maybe even a whole keychain set.</p>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-section">
+      <img src="images/Low-poly Cat.png" alt="Low-poly Cat" class="project-img" />
+      <div class="project-text">
+        <h2>Low-poly Cat</h2>
+        <p>As part of a class project, I created a low poly cat in Blender. I started with a cube and used tools like Extrude, Loop Cut, and Move to shape the body, head, legs, and tail. I used the Mirror Modifier to make both sides match and the Subdivision Surface to smooth it out without losing the low poly look.
+One of the biggest challenges was keeping the legs and tail simple while still making them look natural. I had to stay focused on clean edges and keeping the model balanced with as few polygons as possible.
+This project helped me understand how to build shapes from simple geometry and how to keep things readable even without lots of detail. It showed me how low poly art works, especially for games or animation.
+I'm proud of how it turned out. It taught me patience, planning, and how fun 3D modeling can be. Next, I want to learn how to add textures and maybe animate a simple scene.</p>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project-section">
+      <img src="images/Plant Pot.png" alt="Plant Pot" class="project-img" />
+      <div class="project-text">
+        <h2>Plant Pot</h2>
+        <p>I made a simple plant pot in Blender for a class project. I started with a cylinder mesh and used the Inset and Extrude tools to shape the rim and hollow out the inside. Then I cut the surface into small panels and extruded them slightly to give it a more realistic texture.
+The challenge was keeping the shape balanced — not too thick or thin — especially while working on the inside without breaking the structure. I had to stay focused on keeping it clean and simple.
+This project helped me get better at working with hollow shapes and adding small details without overcomplicating the model. I see how this could be useful in product design or creating 3D props for games.
+Next, I want to model a plant to go inside, maybe something like a cactus or sunflower. It felt good to turn a basic shape into something realistic, and it helped me build confidence with simple forms in Blender.</p>
+      </div>
+    </div>
+
+        <!-- Project 4 -->
+    <div class="project-section">
+      <img src="images/Tank.png" alt="Tank" class="project-img" />
+      <div class="project-text">
+        <h2>Tank</h2>
+        <p>For this project, I created a low poly tank model in Blender. I started with basic shapes like cubes and cylinders to block out the main body and turret. Using the Extrude and Scale tools, I refined the shapes to get the right proportions.
+One challenge was adding details like the treads and gun while keeping the low poly style. I used simple geometric shapes and avoided complex curves to maintain the aesthetic.
+This project taught me a lot about hard surface modeling and how to create believable vehicles with minimal detail. I also learned how to use reference images effectively to guide my modeling process.
+I'm happy with the final result and plan to create a small scene with the tank, maybe a battlefield or a garage setting.</p>
+      </div>
+    </div>
+
+I'm proud of how it turned out. It taught me patience, planning, and how fun 3D modeling can be. Next, I want to learn how to add textures and maybe animate a simple scene.</p>
+      </div>
+    </div>
   </div>
-    <!-- Footer -->
+
+  <!-- Footer -->
   <footer>
     <p style="text-align:center; margin-top: 30px;">© 2025 Yousha Ahmed | Built with GitHub and VS Code</p>
   </footer>
+
+  <!-- Scroll animation trigger -->
+  <script>
+    const sections = document.querySelectorAll('.project-section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 </body>
 </html>
