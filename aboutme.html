@@ -20,9 +20,11 @@
   </nav>
   <div class="container">
     <h1>About Me</h1>
+    <div class="project-section">
     <p>Hi, welcome. My name is Yousha Ahmed.</p>
     <p>I’m a 14-year-old creator, builder, and thinker from Boston, originally from Pakistan. I’m a student in the Engineering Pathway at John D. O’Bryant School of Math & Science, and I love combining logic, design, and storytelling to make cool things that actually work.</p>
-
+    </div>
+    <div class="project-section">
     <h2>What I’m Passionate About</h2>
     <p>I’m passionate about building things that people can interact with like games, tools, or visual experiences. I love the creative side of design and the problem solving side of code. To me, there's something powerful about starting with nothing and ending up with a working project.</p>
     <p>I’m especially drawn to:</p>
@@ -32,7 +34,8 @@
       <li>Physics and real-world logic</li>
       <li>Learning how tech connects to people’s lives</li>
     </ul>
-
+    </div>
+    <div class="project-section">
     <h2>What I Do (My Niche)</h2>
     <p>I design and build projects that sit between games, design, and development. My niche is:</p>
     <ul>
@@ -42,11 +45,13 @@
       <li>Using Blender and Canva to visualize or prototype my ideas</li>
     </ul>
     <p>Whether I’m building a character rig, a timer app, or a mini physics-based game, I focus on making things that are simple, useful, and creative.</p>
-
+    </div>
+    <div class="project-section">
     <h2>Why I Do It (Short Story)</h2>
     <p>When I was younger, I used to take apart remote controls and try to "fix" them (spoiler: I usually broke them). But I never stopped wondering how things worked. That same energy drives me today but now I’ve leveled up with real tools and real purpose.</p>
     <p>I still ask, “What if I try this?” but now the answer sometimes turns into a working app, a model, or a concept people can actually use. I do it because I love that moment when something finally works and I know I built it myself.</p>
-
+    </div>
+    <div class="project-section">
     <h2>What Makes Me Unique</h2>
     <ul>
       <li>I care about the small details that others skip like background shadows, load times, or how a user feels using something.</li>
@@ -54,7 +59,8 @@
       <li>I'm young, but I’m not afraid to go deep into tools and learn things most people my age haven’t touched yet.</li>
       <li>I keep improving whether it’s adding tiny changes to my workout routine or making my app UI one pixel at a time.</li>
     </ul>
-
+    </div>
+    <div class="project-section">
     <h2>What I’m Looking For</h2>
     <p>Right now, I’m open to:</p>
     <ul>
@@ -65,10 +71,27 @@
       <li>Deepening my skills through real-world experience, not just tutorials</li>
     </ul>
   </div>
+  </div>
 
   <!-- Footer -->
   <footer>
     <p style="text-align:center; margin-top: 30px;">© 2025 Yousha Ahmed | Built with GitHub and VS Code</p>
   </footer>
+  <!-- Scroll animation trigger -->
+  <script>
+    const sections = document.querySelectorAll('.project-section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 </body>
 </html>

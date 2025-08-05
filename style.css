@@ -105,3 +105,16 @@ a:hover {
   text-decoration: underline;
 }
 
+.project-section {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-play-state: paused;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -26,10 +26,13 @@
     <h1>Hi, I’m Yousha</h1>
 
   <!-- Quick Bio -->
+   <div class="project-section">
     <h2>Quick Bio</h2>
     <p>I’m a 14-year-old from Boston who loves making creative things. I’m always learning and building. I create tools, games, and ideas that actually work.</p>
+    </div>
 
   <!-- Skills & Tools -->
+   <div class="project-section">
     <h2>What I Used at TSN</h2>
     <ul>
       <li> HTML & CSS</li>
@@ -41,10 +44,27 @@
       <li> Krita</li>
     </ul>
   </div>
+  </div>
 
   <!-- Footer -->
   <footer>
     <p style="text-align:center; margin-top: 30px;">© 2025 Yousha Ahmed | Built with GitHub and VS Code</p>
   </footer>
+  <!-- Scroll animation trigger -->
+  <script>
+    const sections = document.querySelectorAll('.project-section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 </body>
 </html>
