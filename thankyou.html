@@ -15,9 +15,27 @@
   </nav>
 
   <div class="container">
+    <div class="project-section">
     <h1>Thank You!</h1>
     <p>Your message has been sent successfully. I'll try to get back to you soon.</p>
     <p>While you're here, feel free to check out my <a href="projects.html">projects</a> or go back to the <a href="index.html">home page</a>.</p>
   </div>
+  </div>
+  <!-- Scroll animation trigger -->
+  <script>
+    const sections = document.querySelectorAll('.project-section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 </body>
 </html>
