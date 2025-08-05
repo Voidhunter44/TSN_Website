@@ -28,7 +28,7 @@
     <h2>Contact Info</h2>
     <ul>
         <div class="container">
-      <li>Email: <a href="mailto:yousha.ahmed14@gmail.com">yousha.ahmed14@gmail.com</a></li>
+      <li>Email: <a href="mailto:yousha.ahmed14@gmail.com">yousha.ahmed14@gmail.com</a></li> <style></style>
       </div>
         <div class="container">
       <li>GitHub: <a href="https://github.com/Voidhunter44" target="_blank">Voidhunter44</a></li>
@@ -36,19 +36,31 @@
       <!-- You can add more like LinkedIn, Fiverr, etc. -->
     </ul>
 
-    <h2>Send a Message</h2>
-    <form>
-      <label for="name">Name:</label><br>
-      <input type="text" id="name" placeholder="Your name" required><br><br>
+<div class="container">
+  <h1>Contact Me</h1>
+  <p>If you’d like to get in touch, just fill out this form and I’ll receive your message directly via email.</p>
 
-      <label for="email">Email:</label><br>
-      <input type="email" id="email" placeholder="Your email" required><br><br>
+  <form action="https://formsubmit.co/yousha.ahmed14@gmail.com" method="POST">
+    <!-- To prevent spam -->
+    <input type="hidden" name="_captcha" value="false">
 
-      <label for="message">Message:</label><br>
-      <textarea id="message" rows="5" placeholder="Type your message..." required></textarea><br><br>
+    <!-- Name -->
+    <label for="name">Your Name</label><br>
+    <input type="text" name="name" id="name" required><br><br>
 
-      <button type="submit">Send Message</button>
-    </form>
+    <!-- Email -->
+    <label for="email">Your Email</label><br>
+    <input type="email" name="email" id="email" required><br><br>
+
+    <!-- Message -->
+    <label for="message">Message</label><br>
+    <textarea name="message" id="message" rows="5" required></textarea><br><br>
+
+    <!-- Button -->
+    <button type="submit">Send Message</button>
+  </form>
+</div>
+
   </div>
 
   <!-- Footer -->
