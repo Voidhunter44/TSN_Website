@@ -76,6 +76,7 @@ li {
 nav {
   margin-bottom: 30px;
   font-size: 18px;
+  text-align: right; /* Add this line */
 }
 
 nav a {
@@ -146,4 +147,14 @@ a:hover {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.profile-img {
+  float: left;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 20px;
+  margin-top: 10px;
 }
