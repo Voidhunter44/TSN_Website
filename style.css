@@ -9,12 +9,41 @@ body {
 .container {
   max-width: 900px;
   margin: auto;
+  background: url('images/bg-container.jpg') no-repeat center center/cover;
+  background-size: contain;
+  background-attachment: fixed;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 0 30px #0000004d;
+  color: #f1f1f1;
+  position: relative;
+  overflow: hidden;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #00000030;
+  border-radius: 16px;
+  z-index: 0;
+}
+
+.container > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+/*.container {
+  max-width: 900px;
+  margin: auto;
   background: rgba(255, 255, 255, 0.05);
   padding: 40px;
   border-radius: 16px;
   box-shadow: 0 0 30px #0000004d;
   backdrop-filter: blur(10px);
-}
+}*/
 
 h1 {
   font-size: 36px;
