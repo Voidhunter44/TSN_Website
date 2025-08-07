@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Droid Serif', serif;
   background: linear-gradient(120deg, #51bdeb, #3f7485, #baf9ff);
@@ -7,17 +11,18 @@ body {
 }
 
 .container {
-  max-width: 900px;
-  margin: auto;
-  background: url('images/bg-container.jpg') no-repeat center center/cover;
-  background-size: contain;
+  max-width: 100%;
+  min-height: 60px;
+  background: url('media/bg-container.jpg') no-repeat center center/cover;
+  background-size: cover;
   background-attachment: fixed;
-  padding: 40px;
+  padding: 30px;
   border-radius: 22px;
   box-shadow: 0 0 30px #0000004d;
   color: #f1f1f1;
   position: relative;
   overflow: hidden;
+  margin: 0 auto;
 }
 
 .container::before {
@@ -34,6 +39,40 @@ body {
   z-index: 1;
 }
 
+.container-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+
+.container-index {
+  width: 500px;
+  margin: 0 auto;
+  background: url('media/banner-bg.png') no-repeat center center/cover;
+  background-size: contain;
+  background-attachment: fixed;
+  padding: 40px;
+  border-radius: 22px;
+  box-shadow: 0 0 30px #0000004d;
+  color: #f1f1f1;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.container-index::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #00000030;
+  border-radius: 16px;
+  z-index: 0;
+}
+
+.container-index > * {
+  position: relative;
+  z-index: 1;
+}
 
 /*.container {
   max-width: 900px;
@@ -76,7 +115,7 @@ li {
 nav {
   margin-bottom: 30px;
   font-size: 18px;
-  text-align: right; /* Add this line */
+  text-align: center;
 }
 
 nav a {
@@ -140,6 +179,12 @@ a:hover {
   transform: translateY(40px);
   animation: fadeInUp 0.8s ease-out forwards;
   animation-play-state: paused;
+  text-align: center;
+}
+
+.project-section ul {
+  list-style: none;
+  padding-left: 0;
 }
 
 @keyframes fadeInUp {
@@ -147,14 +192,4 @@ a:hover {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-.profile-img {
-  float: left;
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-right: 20px;
-  margin-top: 10px;
 }
